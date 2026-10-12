@@ -17,6 +17,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"email" varchar NOT NULL,
   	"reset_password_token" varchar,
   	"reset_password_expiration" timestamp(3) with time zone,
+  	"reset_password_requested_at" timestamp(3) with time zone,
   	"salt" varchar,
   	"hash" varchar,
   	"login_attempts" numeric DEFAULT 0,

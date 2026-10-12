@@ -14,4 +14,11 @@ npm install
 npm run dev            # :3000
 ```
 
+Production build locally (same entrypoint as Zerops prod):
+
+```bash
+npm run build
+npm start              # node .next/standalone/bin/run.mjs, loads .env from project root
+```
+
 Deploy via Zerops with `zeropsSetup: prod` or `dev` from the recipe import YAML.

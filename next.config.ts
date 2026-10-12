@@ -8,6 +8,9 @@ const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  async redirects() {
+    return [{ source: '/favicon.ico', destination: '/favicon.svg', permanent: false }]
+  },
   images: {
     localPatterns: [
       {

@@ -36,37 +36,41 @@ The Next home page calls GET /api/blog-posts sorted by published date. Opening a
 ] as const
 
 export async function seedDemoContent(payload: Payload) {
-  let hasSite = false
   try {
-    const existingSite = await payload.findGlobal({ slug: 'site-info' })
-    hasSite = Boolean(existingSite?.title)
-  } catch {
-    hasSite = false
-  }
-  if (!hasSite) {
-    await payload.updateGlobal({
-      slug: 'site-info',
-      data: {
-        title: 'Payload + Next.js on Zerops',
-        description:
-          'Headless CMS demo — sample articles below are seeded in Payload. Edit them in the admin panel (/admin) and refresh the Next storefront.',
-      },
-    })
-  }
+    let hasSite = false
+    try {
+      const existingSite = await payload.findGlobal({ slug: 'site-info' })
+      hasSite = Boolean(existingSite?.title)
+    } catch {
+      hasSite = false
+    }
+    if (!hasSite) {
+      await payload.updateGlobal({
+        slug: 'site-info',
+        data: {
+          title: 'Payload + Next.js on Zerops',
+          description:
+            'Headless CMS demo — sample articles below are seeded in Payload. Edit them in the admin panel (/admin) and refresh the Next storefront.',
+        },
+      })
+    }
 
-  const { totalDocs } = await payload.count({ collection: 'blog-posts' })
-  if (totalDocs > 0) {
-    return
-  }
+    const { totalDocs } = await payload.count({ collection: 'blog-posts' })
+    if (totalDocs > 0) {
+      return
+    }
 
-  const now = new Date().toISOString()
-  for (const post of DEMO_POSTS) {
-    await payload.create({
-      collection: 'blog-posts',
-      data: {
-        ...post,
-        publishedAt: now,
-      },
-    })
+    const now = new Date().toISOString()
+    for (const post of DEMO_POSTS) {
+      await payload.create({
+        collection: 'blog-posts',
+        data: {
+          ...post,
+          publishedAt: now,
+        },
+      })
+    }
+  } catch (err) {
+    payload.logger.warn({ err }, 'Demo content seed skipped')
   }
 }
