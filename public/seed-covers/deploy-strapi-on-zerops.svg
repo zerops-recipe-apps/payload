@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#7c3aed"/>
+  <circle cx="980" cy="120" r="180" fill="#ffffff" opacity="0.08"/>
+  <circle cx="200" cy="520" r="240" fill="#000000" opacity="0.12"/>
+  <text x="72" y="320" fill="#ffffff" font-family="system-ui,sans-serif" font-size="56" font-weight="600">Deploy on Zerops</text>
+  <text x="72" y="390" fill="#ede9fe" font-family="system-ui,sans-serif" font-size="28">Strapi, PostgreSQL, React</text>
+</svg>
