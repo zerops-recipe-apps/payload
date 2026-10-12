@@ -26,6 +26,7 @@ function trustedOrigins(): string[] {
   if (host) {
     for (const prefix of ['frontend', 'frontendstage', 'frontenddev']) {
       origins.add(`https://${prefix}-${host}.prg1.zerops.app`)
+      origins.add(`https://${prefix}-${host}-3000.prg1.zerops.app`)
     }
   }
   origins.add('http://localhost:3000')

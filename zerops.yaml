@@ -37,8 +37,8 @@ zerops:
         SERVER_URL: ${zeropsSubdomain}
         APP_URL: ${APP_URL}
         DEV_APP_URL: ${DEV_APP_URL}
-        FRONTEND_URL: https://frontend-${zeropsSubdomainHost}.prg1.zerops.app
-        DEV_FRONTEND_URL: https://frontenddev-${zeropsSubdomainHost}.prg1.zerops.app
+        FRONTEND_URL: https://frontend-${zeropsSubdomainHost}-3000.prg1.zerops.app
+        DEV_FRONTEND_URL: https://frontenddev-${zeropsSubdomainHost}-3000.prg1.zerops.app
       ports:
         - port: 3000
           httpSupport: true
