@@ -14,6 +14,7 @@ zerops:
       buildCommands:
         - npm ci --include=dev
         - npx payload migrate
+        - npx payload generate:importmap
         - npm run build
       deployFiles:
         - .next/standalone

@@ -14,7 +14,7 @@
     "node": ">=24.0.0"
   },
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next build && node scripts/prepare-standalone.mjs",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" payload generate:importmap && next build && node scripts/prepare-standalone.mjs",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "start": "node scripts/start-standalone.mjs",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
